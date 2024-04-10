@@ -6,7 +6,7 @@ import mutators from './mutators'
 import { useEffect } from 'react'
 import Cursors from './components/Cursors'
 
-console.log('url:', import.meta.env.VITE_DO_URL)
+console.log('mutators', mutators)
 
 const synco = new Syncosaurus({
   mutators,
