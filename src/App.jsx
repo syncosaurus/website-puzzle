@@ -7,12 +7,11 @@ import { useEffect } from 'react'
 import Cursors from './components/Cursors'
 
 console.log('url:', import.meta.env.VITE_DO_URL)
-console.log('url:', import.meta.env.DO_URL)
 
 const synco = new Syncosaurus({
   mutators,
   userID: String(Math.random()),
-  server: import.meta.env.VITE_DO_URL || import.meta.env.DO_URL,
+  server: import.meta.env.VITE_DO_URL,
 })
 
 function App() {
