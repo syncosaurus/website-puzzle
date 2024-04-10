@@ -14,7 +14,6 @@ function Board({ height, width, synco }) {
   const freePieceIds = useSubscribe(synco, getFree, [1, 2, 3, 4, 5, 6, 7, 8, 9])
   const placedPieceIds = useSubscribe(synco, getPlaced, [])
 
-  console.log(freePieceIds, placedPieceIds)
   useEffect(() => {
     setBoard(createBoard({ height, width }))
   }, [height, width])

@@ -22,7 +22,7 @@ function App() {
     <>
       <Cursors synco={synco} />
       <Board height={3} width={3} synco={synco} />
-      <button onClick={() => synco.mutate.restartPuzzle()} />
+      {/* <button onClick={() => synco.mutate.restartPuzzle()} /> */}
     </>
   )
 }
