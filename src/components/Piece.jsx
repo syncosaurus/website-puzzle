@@ -34,6 +34,10 @@ export function Piece({ id, children, styles, synco }) {
     width: 100,
     zIndex: 5,
   }
+
+  console.log('balls')
+  const hello = 'hi'
+
   return (
     <button
       ref={setNodeRef}
