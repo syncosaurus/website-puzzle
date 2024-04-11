@@ -1,6 +1,9 @@
 import { useDraggable } from '@dnd-kit/core'
 import { useSubscribe } from 'syncosaurus'
 import { CSS } from '@dnd-kit/utilities'
+import pieces from './pieces/index.js'
+
+console.log(pieces)
 
 export function Piece({ id, children, styles, synco }) {
   const getPiece = tx => tx.get(String(id))
@@ -35,12 +38,14 @@ export function Piece({ id, children, styles, synco }) {
   return (
     <div
       ref={setNodeRef}
-      className="bg-slate-400 w-24 aspect-square z-40"
+      className="w-24 aspect-square z-40"
       style={{ ...style, ...styles, ...syncoPosition }}
       {...listeners}
       {...attributes}
     >
-      {id}
+      <div className=" absolute w-[125px]">
+        <img src={Piece1} alt="piece1" />
+      </div>
       {children}
     </div>
   )
