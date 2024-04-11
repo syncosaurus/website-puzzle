@@ -1,9 +1,8 @@
-import Stack from 'react-bootstrap/Stack'
 import BoardRow from './BoardRow'
 
 function RowGenerator({ rows, placedPieceIds, synco }) {
   return (
-    <Stack>
+    <div>
       {rows.map((row, idx) => {
         return (
           <BoardRow
@@ -14,7 +13,7 @@ function RowGenerator({ rows, placedPieceIds, synco }) {
           />
         )
       })}
-    </Stack>
+    </div>
   )
 }
 

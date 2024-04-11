@@ -33,15 +33,15 @@ export function Piece({ id, children, styles, synco }) {
   }
 
   return (
-    <button
+    <div
       ref={setNodeRef}
-      className="bg-slate-400 h-20 w-20 -z-40"
+      className="bg-slate-400 w-24 aspect-square z-40"
       style={{ ...style, ...styles, ...syncoPosition }}
       {...listeners}
       {...attributes}
     >
       {id}
       {children}
-    </button>
+    </div>
   )
 }

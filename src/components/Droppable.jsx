@@ -4,15 +4,19 @@ export function Droppable({ id, children }) {
   const { isOver, setNodeRef } = useDroppable({
     id,
   })
-  const style = {
-    backgroundColor: isOver ? 'green' : 'grey',
-    height: 100,
-    width: 100,
-    border: '1px solid black',
-  }
 
-  return (
-    <div ref={setNodeRef} style={style}>
+  return isOver ? (
+    <div
+      ref={setNodeRef}
+      className="bg-green-700 w-24 aspect-square border-black shadow-inner shadow-slate-950"
+    >
+      {children}
+    </div>
+  ) : (
+    <div
+      ref={setNodeRef}
+      className="bg-slate-500 w-24 aspect-square border-black shadow-inner shadow-slate-950"
+    >
       {children}
     </div>
   )
