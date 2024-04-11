@@ -6,6 +6,8 @@ import mutators from './mutators'
 import { useEffect } from 'react'
 import Cursors from './components/Cursors'
 
+console.log('mutators', mutators)
+
 const synco = new Syncosaurus({
   mutators,
   userID: String(Math.random()),
@@ -22,7 +24,7 @@ function App() {
     <>
       <Cursors synco={synco} />
       <Board height={3} width={3} synco={synco} />
-      <button onClick={() => synco.mutate.restartPuzzle()} />
+      {/* <button onClick={() => synco.mutate.restartPuzzle()} /> */}
     </>
   )
 }
