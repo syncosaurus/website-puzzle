@@ -31,17 +31,17 @@ export function Piece({ id, children, styles, synco }) {
   const style = {
     transform: CSS.Translate.toString(transform),
   }
-
+  
   return (
-    <button
+    <div
       ref={setNodeRef}
-      className="bg-slate-400 h-20 w-20 -z-40"
+      className="bg-slate-400 h-[100px] w-[100px] z-40"
       style={{ ...style, ...styles, ...syncoPosition }}
       {...listeners}
       {...attributes}
     >
       {id}
       {children}
-    </button>
+    </div>
   )
 }
