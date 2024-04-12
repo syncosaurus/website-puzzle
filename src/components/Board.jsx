@@ -3,9 +3,9 @@ import { useEffect, useState } from 'react'
 import { DndContext } from '@dnd-kit/core'
 import { createBoard } from '../utils/helpers'
 import RowGenerator from './RowGenerator'
-import { Piece } from './Piece'
 import { PieceTransparent } from './PieceTransparent'
 import { useSubscribe } from 'syncosaurus'
+import Confetti from './Confetti'
 
 const getFree = tx => tx.get('free')
 const getPlaced = tx => tx.get('placed')
@@ -33,6 +33,7 @@ function Board({ height, width, synco }) {
   return (
     <DndContext onDragEnd={handleDragEnd}>
       <div className="absolute h-screen w-screen items-center justify-center overflow-hidden overscroll-none">
+        <Confetti />
         {freePieceIds.map(id => (
           <PieceTransparent
             key={id}
