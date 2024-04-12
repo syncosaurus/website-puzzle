@@ -43,7 +43,7 @@ export function PieceTransparent({ id, children, styles, synco }) {
           {...listeners}
           {...attributes}
         >
-          <div className="absolute w-64 -translate-y-px opacity-90">
+          <div className="absolute w-32 -translate-y-px opacity-90 hover:contrast-125 hover:drop-shadow-md">
             <img src={pieces[id - 1]} alt="piece1" />
           </div>
           {children}
@@ -58,7 +58,7 @@ export function PieceTransparent({ id, children, styles, synco }) {
           {...listeners}
           {...attributes}
         >
-          <div className="absolute w-64 -translate-x-[8px] -translate-y-[0.25px] opacity-90">
+          <div className="absolute w-32 -translate-x-[8px] -translate-y-[0.25px] opacity-90 hover:contrast-125 hover:drop-shadow-md">
             <img src={pieces[id - 1]} alt="piece1" />
           </div>
           {children}
@@ -73,7 +73,7 @@ export function PieceTransparent({ id, children, styles, synco }) {
           {...listeners}
           {...attributes}
         >
-          <div className="absolute w-64 -translate-x-[25px] -translate-y-[0.25px] opacity-90">
+          <div className="absolute w-32 -translate-x-[25px] -translate-y-[0.25px] opacity-90 hover:contrast-125 hover:drop-shadow-md">
             <img src={pieces[id - 1]} alt="piece1" />
           </div>
           {children}
@@ -88,7 +88,7 @@ export function PieceTransparent({ id, children, styles, synco }) {
           {...listeners}
           {...attributes}
         >
-          <div className="absolute w-64 -translate-x-[0px] -translate-y-[3.25px] opacity-90">
+          <div className="absolute w-32 -translate-x-[0px] -translate-y-[3.25px] opacity-90 hover:contrast-125 hover:drop-shadow-md">
             <img src={pieces[id - 1]} alt="piece1" />
           </div>
           {children}
@@ -103,7 +103,7 @@ export function PieceTransparent({ id, children, styles, synco }) {
           {...listeners}
           {...attributes}
         >
-          <div className="absolute w-64 -translate-x-[24px] -translate-y-[24.25px] opacity-90">
+          <div className="absolute w-32 -translate-x-[24px] -translate-y-[24.25px] opacity-90 hover:contrast-125 hover:drop-shadow-md">
             <img src={pieces[id - 1]} alt="piece1" />
           </div>
           {children}
@@ -118,7 +118,7 @@ export function PieceTransparent({ id, children, styles, synco }) {
           {...listeners}
           {...attributes}
         >
-          <div className="absolute w-64 -translate-x-[25px] -translate-y-[4.6px] opacity-90">
+          <div className="absolute w-32 -translate-x-[25px] -translate-y-[4.6px] opacity-90 hover:contrast-125 hover:drop-shadow-md">
             <img src={pieces[id - 1]} alt="piece1" />
           </div>
           {children}
@@ -133,7 +133,7 @@ export function PieceTransparent({ id, children, styles, synco }) {
           {...listeners}
           {...attributes}
         >
-          <div className="absolute w-64 -translate-y-[25.25px] opacity-90">
+          <div className="absolute w-32 -translate-y-[25.25px] opacity-90 hover:contrast-125 hover:drop-shadow-md">
             <img src={pieces[id - 1]} alt="piece1" />
           </div>
           {children}
@@ -148,7 +148,7 @@ export function PieceTransparent({ id, children, styles, synco }) {
           {...listeners}
           {...attributes}
         >
-          <div className="absolute w-64 -translate-x-[12.5px] -translate-y-[25.25px] opacity-90">
+          <div className="absolute w-32 -translate-x-[12.5px] -translate-y-[25.25px] opacity-90 hover:contrast-125 hover:drop-shadow-md">
             <img src={pieces[id - 1]} alt="piece1" />
           </div>
           {children}
@@ -163,7 +163,7 @@ export function PieceTransparent({ id, children, styles, synco }) {
           {...listeners}
           {...attributes}
         >
-          <div className="absolute w-64 -translate-x-[25px] -translate-y-[25.25px] opacity-90">
+          <div className="absolute w-32 -translate-x-[25px] -translate-y-[25.25px] opacity-90 hover:contrast-125 hover:brightness-90 hover:drop-shadow-md">
             <img src={pieces[id - 1]} alt="piece1" />
           </div>
           {children}

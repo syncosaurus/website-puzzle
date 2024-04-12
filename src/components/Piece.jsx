@@ -45,7 +45,7 @@ export function Piece({ id, children, styles, synco }) {
           {...listeners}
           {...attributes}
         >
-          <div className="absolute w-64 -translate-y-px">
+          <div className="absolute w-32 -translate-y-px">
             <img src={pieces[id - 1]} alt="piece1" />
           </div>
           {children}
@@ -60,7 +60,7 @@ export function Piece({ id, children, styles, synco }) {
           {...listeners}
           {...attributes}
         >
-          <div className="absolute w-64 -translate-x-[8px] -translate-y-[0.25px]">
+          <div className="absolute w-32 -translate-x-[8px] -translate-y-[0.25px]">
             <img src={pieces[id - 1]} alt="piece1" />
           </div>
           {children}
@@ -75,7 +75,7 @@ export function Piece({ id, children, styles, synco }) {
           {...listeners}
           {...attributes}
         >
-          <div className="absolute w-64 -translate-x-[25px] -translate-y-[0.25px]">
+          <div className="absolute w-32 -translate-x-[25px] -translate-y-[0.25px]">
             <img src={pieces[id - 1]} alt="piece1" />
           </div>
           {children}
@@ -90,7 +90,7 @@ export function Piece({ id, children, styles, synco }) {
           {...listeners}
           {...attributes}
         >
-          <div className="absolute w-64 -translate-x-[0px] -translate-y-[3.25px]">
+          <div className="absolute w-32 -translate-x-[0px] -translate-y-[3.25px]">
             <img src={pieces[id - 1]} alt="piece1" />
           </div>
           {children}
@@ -105,7 +105,7 @@ export function Piece({ id, children, styles, synco }) {
           {...listeners}
           {...attributes}
         >
-          <div className="absolute w-64 -translate-x-[24px] -translate-y-[24.25px]">
+          <div className="absolute w-32 -translate-x-[24px] -translate-y-[24.25px]">
             <img src={pieces[id - 1]} alt="piece1" />
           </div>
           {children}
@@ -120,7 +120,7 @@ export function Piece({ id, children, styles, synco }) {
           {...listeners}
           {...attributes}
         >
-          <div className="absolute w-64 -translate-x-[25px] -translate-y-[4.6px]">
+          <div className="absolute w-32 -translate-x-[25px] -translate-y-[4.6px]">
             <img src={pieces[id - 1]} alt="piece1" />
           </div>
           {children}
@@ -135,7 +135,7 @@ export function Piece({ id, children, styles, synco }) {
           {...listeners}
           {...attributes}
         >
-          <div className="absolute w-64 -translate-y-[25.25px]">
+          <div className="absolute w-32 -translate-y-[25.25px]">
             <img src={pieces[id - 1]} alt="piece1" />
           </div>
           {children}
@@ -150,7 +150,7 @@ export function Piece({ id, children, styles, synco }) {
           {...listeners}
           {...attributes}
         >
-          <div className="absolute w-64 -translate-x-[12.5px] -translate-y-[25.25px]">
+          <div className="absolute w-32 -translate-x-[12.5px] -translate-y-[25.25px]">
             <img src={pieces[id - 1]} alt="piece1" />
           </div>
           {children}
@@ -165,7 +165,7 @@ export function Piece({ id, children, styles, synco }) {
           {...listeners}
           {...attributes}
         >
-          <div className="absolute w-64 -translate-x-[25px] -translate-y-[25.25px]">
+          <div className="absolute w-32 -translate-x-[25px] -translate-y-[25.25px]">
             <img src={pieces[id - 1]} alt="piece1" />
           </div>
           {children}
