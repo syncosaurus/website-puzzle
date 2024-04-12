@@ -3,7 +3,7 @@ import { useSubscribe } from 'syncosaurus'
 import { CSS } from '@dnd-kit/utilities'
 import pieces from './pieces/index.js'
 
-export function Piece({ id, children, styles, synco }) {
+export function PieceTransparent({ id, children, styles, synco }) {
   const getPiece = tx => tx.get(String(id))
   const params = useSubscribe(synco, getPiece, {
     position: {
@@ -33,8 +33,6 @@ export function Piece({ id, children, styles, synco }) {
     transform: CSS.Translate.toString(transform),
   }
 
-  if (pieces[id - 1] == undefined) return
-
   switch (id) {
     case 1:
       return (
@@ -45,7 +43,7 @@ export function Piece({ id, children, styles, synco }) {
           {...listeners}
           {...attributes}
         >
-          <div className="absolute w-32 -translate-y-px">
+          <div className="absolute w-32 -translate-y-px opacity-90 hover:contrast-125 hover:drop-shadow-md transition">
             <img src={pieces[id - 1]} alt="piece1" />
           </div>
           {children}
@@ -60,7 +58,7 @@ export function Piece({ id, children, styles, synco }) {
           {...listeners}
           {...attributes}
         >
-          <div className="absolute w-32 -translate-x-[8px] -translate-y-[0.25px]">
+          <div className="absolute w-32 -translate-x-[8px] -translate-y-[0.25px] opacity-90 hover:contrast-125 hover:drop-shadow-md transition">
             <img src={pieces[id - 1]} alt="piece1" />
           </div>
           {children}
@@ -75,7 +73,7 @@ export function Piece({ id, children, styles, synco }) {
           {...listeners}
           {...attributes}
         >
-          <div className="absolute w-32 -translate-x-[25px] -translate-y-[0.25px]">
+          <div className="absolute w-32 -translate-x-[25px] -translate-y-[0.25px] opacity-90 hover:contrast-125 hover:drop-shadow-md transition">
             <img src={pieces[id - 1]} alt="piece1" />
           </div>
           {children}
@@ -90,7 +88,7 @@ export function Piece({ id, children, styles, synco }) {
           {...listeners}
           {...attributes}
         >
-          <div className="absolute w-32 -translate-x-[0px] -translate-y-[3.25px]">
+          <div className="absolute w-32 -translate-x-[0px] -translate-y-[3.25px] opacity-90 hover:contrast-125 hover:drop-shadow-md transition">
             <img src={pieces[id - 1]} alt="piece1" />
           </div>
           {children}
@@ -105,7 +103,7 @@ export function Piece({ id, children, styles, synco }) {
           {...listeners}
           {...attributes}
         >
-          <div className="absolute w-32 -translate-x-[24px] -translate-y-[24.25px]">
+          <div className="absolute w-32 -translate-x-[24px] -translate-y-[24.25px] opacity-90 hover:contrast-125 hover:drop-shadow-md transition">
             <img src={pieces[id - 1]} alt="piece1" />
           </div>
           {children}
@@ -120,7 +118,7 @@ export function Piece({ id, children, styles, synco }) {
           {...listeners}
           {...attributes}
         >
-          <div className="absolute w-32 -translate-x-[25px] -translate-y-[4.6px]">
+          <div className="absolute w-32 -translate-x-[25px] -translate-y-[4.6px] opacity-90 hover:contrast-125 hover:drop-shadow-md transition">
             <img src={pieces[id - 1]} alt="piece1" />
           </div>
           {children}
@@ -135,7 +133,7 @@ export function Piece({ id, children, styles, synco }) {
           {...listeners}
           {...attributes}
         >
-          <div className="absolute w-32 -translate-y-[25.25px]">
+          <div className="absolute w-32 -translate-y-[25.25px] opacity-90 hover:contrast-125 hover:drop-shadow-md transition">
             <img src={pieces[id - 1]} alt="piece1" />
           </div>
           {children}
@@ -150,7 +148,7 @@ export function Piece({ id, children, styles, synco }) {
           {...listeners}
           {...attributes}
         >
-          <div className="absolute w-32 -translate-x-[12.5px] -translate-y-[25.25px]">
+          <div className="absolute w-32 -translate-x-[12.5px] -translate-y-[25.25px] opacity-90 hover:contrast-125 hover:drop-shadow-md transition">
             <img src={pieces[id - 1]} alt="piece1" />
           </div>
           {children}
@@ -165,7 +163,7 @@ export function Piece({ id, children, styles, synco }) {
           {...listeners}
           {...attributes}
         >
-          <div className="absolute w-32 -translate-x-[25px] -translate-y-[25.25px]">
+          <div className="absolute w-32 -translate-x-[25px] -translate-y-[25.25px] opacity-90 hover:contrast-125 hover:brightness-90 hover:drop-shadow-md transition">
             <img src={pieces[id - 1]} alt="piece1" />
           </div>
           {children}

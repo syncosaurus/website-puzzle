@@ -4,6 +4,7 @@ import { DndContext } from '@dnd-kit/core'
 import { createBoard } from '../utils/helpers'
 import RowGenerator from './RowGenerator'
 import { Piece } from './Piece'
+import { PieceTransparent } from './PieceTransparent'
 import { useSubscribe } from 'syncosaurus'
 
 const getFree = tx => tx.get('free')
@@ -32,7 +33,7 @@ function Board({ height, width, synco }) {
   return (
     <DndContext onDragEnd={handleDragEnd}>
       {freePieceIds.map(id => (
-        <Piece
+        <PieceTransparent
           key={id}
           id={id}
           className="puzzle-piece"
@@ -42,11 +43,13 @@ function Board({ height, width, synco }) {
           synco={synco}
         />
       ))}
-      <RowGenerator
-        rows={board}
-        placedPieceIds={placedPieceIds}
-        synco={synco}
-      />
+      <div className="h-screen flex items-center justify-center">
+        <RowGenerator
+          rows={board}
+          placedPieceIds={placedPieceIds}
+          synco={synco}
+        />
+      </div>
     </DndContext>
   )
 }

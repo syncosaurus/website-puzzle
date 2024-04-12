@@ -1,10 +1,9 @@
-import Stack from 'react-bootstrap/Stack'
 import { Droppable } from './Droppable'
 import { Piece } from './Piece'
 
 function BoardRow({ row, placedPieceIds, synco }) {
   return (
-    <Stack direction="horizontal">
+    <div className="flex col-span-3">
       {row.map(cell => {
         return (
           <Droppable id={cell.id} key={cell.id} cell={cell}>
@@ -14,7 +13,7 @@ function BoardRow({ row, placedPieceIds, synco }) {
           </Droppable>
         )
       })}
-    </Stack>
+    </div>
   )
 }
 

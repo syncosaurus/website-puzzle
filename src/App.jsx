@@ -1,12 +1,8 @@
 import Board from './components/Board'
-import './styles.css'
-import 'bootstrap/dist/css/bootstrap.min.css'
 import Syncosaurus, { useUpdateMyPresence } from 'syncosaurus'
 import mutators from './mutators'
 import { useEffect } from 'react'
 import Cursors from './components/Cursors'
-
-console.log('mutators', mutators)
 
 const synco = new Syncosaurus({
   mutators,
