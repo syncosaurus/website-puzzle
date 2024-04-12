@@ -42,11 +42,13 @@ function Board({ height, width, synco }) {
           synco={synco}
         />
       ))}
-      <RowGenerator
-        rows={board}
-        placedPieceIds={placedPieceIds}
-        synco={synco}
-      />
+      <div className="h-screen flex items-center justify-center">
+        <RowGenerator
+          rows={board}
+          placedPieceIds={placedPieceIds}
+          synco={synco}
+        />
+      </div>
     </DndContext>
   )
 }

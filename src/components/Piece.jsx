@@ -3,8 +3,6 @@ import { useSubscribe } from 'syncosaurus'
 import { CSS } from '@dnd-kit/utilities'
 import pieces from './pieces/index.js'
 
-console.log(pieces)
-
 export function Piece({ id, children, styles, synco }) {
   const getPiece = tx => tx.get(String(id))
   const params = useSubscribe(synco, getPiece, {
@@ -35,6 +33,8 @@ export function Piece({ id, children, styles, synco }) {
     transform: CSS.Translate.toString(transform),
   }
 
+  if (pieces[id - 1] == undefined) return
+
   return (
     <div
       ref={setNodeRef}
@@ -43,8 +43,8 @@ export function Piece({ id, children, styles, synco }) {
       {...listeners}
       {...attributes}
     >
-      <div className=" absolute w-[125px]">
-        <img src={Piece1} alt="piece1" />
+      <div className={'absolute w-[125px]'}>
+        <img src={pieces[id - 1]} alt="piece1" />
       </div>
       {children}
     </div>
