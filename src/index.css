@@ -5,5 +5,7 @@
 @layer base {
   body {
     @apply bg-transparent;
+    @apply overscroll-none;
+    @apply overflow-hidden;
   }
 }
