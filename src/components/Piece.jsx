@@ -55,12 +55,12 @@ export function Piece({ id, children, styles, synco }) {
       return (
         <div
           ref={setNodeRef}
-          className="w-24 aspect-square z-40 overflow-visible"
+          className="w-24 aspect-square z-40"
           style={{ ...style, ...styles, ...syncoPosition }}
           {...listeners}
           {...attributes}
         >
-          <div className="absolute w-[120px] -translate-x-7">
+          <div className="absolute w-[121px] -translate-x-[8px] -translate-y-[0.25px]">
             <img src={pieces[id - 1]} alt="piece1" />
           </div>
           {children}
@@ -75,13 +75,103 @@ export function Piece({ id, children, styles, synco }) {
           {...listeners}
           {...attributes}
         >
-          <div className="absolute w-[100px] -translate-x-7 -translate-y-1">
+          <div className="absolute w-[121px] -translate-x-[25px] -translate-y-[0.25px]">
+            <img src={pieces[id - 1]} alt="piece1" />
+          </div>
+          {children}
+        </div>
+      )
+    case 4:
+      return (
+        <div
+          ref={setNodeRef}
+          className="w-24 aspect-square z-40 overflow-visible"
+          style={{ ...style, ...styles, ...syncoPosition }}
+          {...listeners}
+          {...attributes}
+        >
+          <div className="absolute w-[121px] -translate-x-[0px] -translate-y-[3.25px]">
+            <img src={pieces[id - 1]} alt="piece1" />
+          </div>
+          {children}
+        </div>
+      )
+    case 5:
+      return (
+        <div
+          ref={setNodeRef}
+          className="w-24 aspect-square z-40 overflow-visible"
+          style={{ ...style, ...styles, ...syncoPosition }}
+          {...listeners}
+          {...attributes}
+        >
+          <div className="absolute w-[123px] -translate-x-[24px] -translate-y-[24.25px]">
+            <img src={pieces[id - 1]} alt="piece1" />
+          </div>
+          {children}
+        </div>
+      )
+    case 6:
+      return (
+        <div
+          ref={setNodeRef}
+          className="w-24 aspect-square z-40 overflow-visible"
+          style={{ ...style, ...styles, ...syncoPosition }}
+          {...listeners}
+          {...attributes}
+        >
+          <div className="absolute w-[123px] -translate-x-[25px] -translate-y-[4.6px]">
+            <img src={pieces[id - 1]} alt="piece1" />
+          </div>
+          {children}
+        </div>
+      )
+    case 7:
+      return (
+        <div
+          ref={setNodeRef}
+          className="w-24 aspect-square z-40 overflow-visible"
+          style={{ ...style, ...styles, ...syncoPosition }}
+          {...listeners}
+          {...attributes}
+        >
+          <div className="absolute w-[123px] -translate-y-[25.25px]">
+            <img src={pieces[id - 1]} alt="piece1" />
+          </div>
+          {children}
+        </div>
+      )
+    case 8:
+      return (
+        <div
+          ref={setNodeRef}
+          className="w-24 aspect-square z-40 overflow-visible"
+          style={{ ...style, ...styles, ...syncoPosition }}
+          {...listeners}
+          {...attributes}
+        >
+          <div className="absolute w-[121px] -translate-x-[12.5px] -translate-y-[25.25px]">
+            <img src={pieces[id - 1]} alt="piece1" />
+          </div>
+          {children}
+        </div>
+      )
+    case 9:
+      return (
+        <div
+          ref={setNodeRef}
+          className="w-24 aspect-square z-40 overflow-visible"
+          style={{ ...style, ...styles, ...syncoPosition }}
+          {...listeners}
+          {...attributes}
+        >
+          <div className="absolute w-[123px] -translate-x-[25px] -translate-y-[25.25px]">
             <img src={pieces[id - 1]} alt="piece1" />
           </div>
           {children}
         </div>
       )
     default:
-      return <div>hello</div>
+      return <></>
   }
 }
