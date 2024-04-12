@@ -33,7 +33,6 @@ function Board({ height, width, synco }) {
   return (
     <DndContext onDragEnd={handleDragEnd}>
       <div className="absolute h-screen w-screen items-center justify-center overflow-hidden overscroll-none">
-        <Confetti />
         {freePieceIds.map(id => (
           <PieceTransparent
             key={id}
