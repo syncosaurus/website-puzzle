@@ -12,6 +12,7 @@ export function Droppable({ id, children }) {
       ref={setNodeRef}
       className="bg-green-700 w-24 aspect-square border-black shadow-inner shadow-slate-950"
     >
+      {id === 1 && <img src={pieces[9]} className=" absolute" />}
       {children}
     </div>
   ) : (
