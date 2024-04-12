@@ -32,23 +32,25 @@ function Board({ height, width, synco }) {
 
   return (
     <DndContext onDragEnd={handleDragEnd}>
-      {freePieceIds.map(id => (
-        <PieceTransparent
-          key={id}
-          id={id}
-          className="puzzle-piece"
-          styles={{
-            position: 'absolute',
-          }}
-          synco={synco}
-        />
-      ))}
-      <div className="h-screen flex items-center justify-center">
-        <RowGenerator
-          rows={board}
-          placedPieceIds={placedPieceIds}
-          synco={synco}
-        />
+      <div className="absolute h-screen w-screen items-center justify-center overflow-hidden overscroll-none">
+        {freePieceIds.map(id => (
+          <PieceTransparent
+            key={id}
+            id={id}
+            className="puzzle-piece"
+            styles={{
+              position: 'absolute',
+            }}
+            synco={synco}
+          />
+        ))}
+        <div className="h-screen flex items-center justify-center">
+          <RowGenerator
+            rows={board}
+            placedPieceIds={placedPieceIds}
+            synco={synco}
+          />
+        </div>
       </div>
     </DndContext>
   )
