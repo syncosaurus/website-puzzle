@@ -1,5 +1,7 @@
 import { useDroppable } from '@dnd-kit/core'
 
+import pieces from './pieces/index'
+
 export function Droppable({ id, children }) {
   const { isOver, setNodeRef } = useDroppable({
     id,
@@ -13,10 +15,8 @@ export function Droppable({ id, children }) {
       {children}
     </div>
   ) : (
-    <div
-      ref={setNodeRef}
-      className="bg-slate-500 w-24 aspect-square border-black shadow-inner shadow-slate-950"
-    >
+    <div ref={setNodeRef} className="w-24 aspect-square">
+      {id === 1 && <img src={pieces[9]} className=" absolute" />}
       {children}
     </div>
   )

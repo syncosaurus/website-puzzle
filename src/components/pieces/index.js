@@ -7,6 +7,7 @@ import Piece6 from './piece6.svg'
 import Piece7 from './piece7.svg'
 import Piece8 from './piece8.svg'
 import Piece9 from './piece9.svg'
+import Overlay from './puzzle-overlay.svg'
 
 export default [
   Piece1,
@@ -18,4 +19,5 @@ export default [
   Piece7,
   Piece8,
   Piece9,
+  Overlay,
 ]
