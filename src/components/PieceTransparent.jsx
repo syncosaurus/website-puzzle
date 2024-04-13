@@ -3,10 +3,6 @@ import { useSubscribe } from 'syncosaurus'
 import { CSS } from '@dnd-kit/utilities'
 import pieces from './pieces/index.js'
 
-function getRandomInt(max) {
-  return Math.floor(Math.random() * max)
-}
-
 export function PieceTransparent({ id, children, styles, synco, amDragging }) {
   const getPiece = tx => tx.get(String(id))
   const params = useSubscribe(synco, getPiece, {
@@ -30,7 +26,6 @@ export function PieceTransparent({ id, children, styles, synco, amDragging }) {
       top: `${params.position.y - amDragging.delta.y}px`,
     }
   } else if (!params.placed) {
-    console.log('mutating with synco')
     syncoPosition = {
       left: `${params.position.x}px`,
       top: `${params.position.y}px`,

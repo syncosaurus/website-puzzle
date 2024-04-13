@@ -1,16 +1,16 @@
 import { useEffect, useState } from 'react'
-
 import { DndContext } from '@dnd-kit/core'
 import { restrictToParentElement } from '@dnd-kit/modifiers'
 import { createBoard } from '../utils/helpers'
 import RowGenerator from './RowGenerator'
 import { PieceTransparent } from './PieceTransparent'
 import { useSubscribe } from 'syncosaurus'
+import { getRandomInt } from '../utils/helpers'
 
 const getFree = tx => tx.get('free')
 const getPlaced = tx => tx.get('placed')
 
-function Board({ height, width, synco, userID }) {
+function Board({ height, width, synco }) {
   const [board, setBoard] = useState([])
   const freePieceIds = useSubscribe(synco, getFree, [1, 2, 3, 4, 5, 6, 7, 8, 9])
   const placedPieceIds = useSubscribe(synco, getPlaced, [])
@@ -21,20 +21,18 @@ function Board({ height, width, synco, userID }) {
   }, [height, width])
 
   const handleDragEnd = e => {
-    console.log('end event', e)
     setAmDragging({})
     if (e.over === null || e.active.id !== e.over.id) {
       const x = e.delta.x
       const y = e.delta.y
-      synco.mutate.dragEnd({ id: e.active.id, delta: { x, y } })
+      synco.mutate.dragMove({ id: e.active.id, delta: { x, y } })
       return
     }
 
-    synco.mutate.placePiece(e.active.id)
+    synco.mutate.placePiece({ id: e.active.id })
   }
 
   const handleDragMove = e => {
-    console.log('move event', e)
     const x = e.delta.x
     const y = e.delta.y
     setAmDragging({ id: e.active.id, delta: { x, y } })
@@ -42,10 +40,21 @@ function Board({ height, width, synco, userID }) {
   }
 
   const handleDragStart = e => {
-    console.log('start event', e)
     setAmDragging({ id: e.active.id, delta: { x: 0, y: 0 } })
-    synco.mutate.dragStart({ id: e.active.id, userID })
-    return
+    synco.mutate.dragStart({ id: e.active.id })
+  }
+
+  const handleReset = e => {
+    e.preventDefault()
+    let randomPosArray = []
+    for (let i = 1; i <= 9; i++) {
+      randomPosArray.push({
+        id: i,
+        x: getRandomInt(500),
+        y: getRandomInt(200) + 100,
+      })
+    }
+    synco.mutate.restartPuzzle({ startPosArr: randomPosArray })
   }
 
   return (
@@ -76,9 +85,7 @@ function Board({ height, width, synco, userID }) {
               synco={synco}
             />
             <div className="inline-block">
-              <button onClick={() => synco.mutate.restartPuzzle()}>
-                Reset Puzzle
-              </button>
+              <button onClick={handleReset}>Reset Puzzle</button>
             </div>
           </div>
         </div>
