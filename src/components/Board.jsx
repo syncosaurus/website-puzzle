@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react'
 
 import { DndContext } from '@dnd-kit/core'
-import { restrictToWindowEdges } from '@dnd-kit/modifiers'
+import { restrictToParentElement } from '@dnd-kit/modifiers'
 import { createBoard } from '../utils/helpers'
 import RowGenerator from './RowGenerator'
-import { Piece } from './Piece'
 import { PieceTransparent } from './PieceTransparent'
 import { useSubscribe } from 'syncosaurus'
 
@@ -52,7 +51,7 @@ function Board({ height, width, synco, userID }) {
   return (
     <>
       <DndContext
-        modifiers={[restrictToWindowEdges]}
+        modifiers={[restrictToParentElement]}
         onDragStart={handleDragStart}
         onDragMove={handleDragMove}
         onDragEnd={handleDragEnd}

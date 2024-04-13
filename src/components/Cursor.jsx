@@ -1,4 +1,4 @@
-const Cursor = ({ fill }) => {
+const Cursor = ({ fill, id }) => {
   return (
     <div>
       <svg
@@ -17,6 +17,7 @@ const Cursor = ({ fill }) => {
           style={{ fill: fill || 'black' }}
         ></path>
       </svg>
+      <p>user {id}</p>
     </div>
   )
 }
