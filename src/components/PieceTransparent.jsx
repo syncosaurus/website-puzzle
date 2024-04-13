@@ -40,6 +40,7 @@ export function PieceTransparent({ id, children, styles, synco, amDragging }) {
 
   const style = {
     transform: CSS.Translate.toString(transform),
+    touchAction: 'none',
   }
 
   switch (id) {
