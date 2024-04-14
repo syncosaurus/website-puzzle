@@ -3,7 +3,7 @@ import { useSubscribe } from 'syncosaurus'
 import { CSS } from '@dnd-kit/utilities'
 import pieces from './pieces/index.js'
 
-export function PieceTransparent({ id, children, styles, synco }) {
+export function PieceTransparent({ id, children, styles, synco, amDragging }) {
   const getPiece = tx => tx.get(String(id))
   const params = useSubscribe(synco, getPiece, {
     position: {
@@ -12,11 +12,20 @@ export function PieceTransparent({ id, children, styles, synco }) {
       scaleX: 1,
       scaleY: 1,
     },
+    dragSessionStart: {
+      x: 0,
+      y: 0,
+    },
     placed: false,
   })
 
   let syncoPosition
-  if (!params.placed) {
+  if (amDragging.id === id) {
+    syncoPosition = {
+      left: `${params.position.x - amDragging.delta.x}px`,
+      top: `${params.position.y - amDragging.delta.y}px`,
+    }
+  } else if (!params.placed) {
     syncoPosition = {
       left: `${params.position.x}px`,
       top: `${params.position.y}px`,
@@ -31,6 +40,7 @@ export function PieceTransparent({ id, children, styles, synco }) {
 
   const style = {
     transform: CSS.Translate.toString(transform),
+    touchAction: 'none',
   }
 
   switch (id) {

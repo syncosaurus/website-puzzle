@@ -1,22 +1,25 @@
-function getRandomInt(max) {
-  return Math.floor(Math.random() * max)
+const restartPuzzle = (tx, { startPosArr }) => {
+  tx.set('free', [1, 2, 3, 4, 5, 6, 7, 8, 9])
+  tx.set('placed', [])
+
+  startPosArr.forEach(piece => {
+    tx.set(piece.id, {
+      position: {
+        x: piece.x,
+        y: piece.y,
+        scaleX: 1,
+        scaleY: 1,
+      },
+      dragSessionStart: {
+        x: piece.x,
+        y: piece.y,
+      },
+      placed: false,
+    })
+  })
 }
 
-const movePiece = (tx, { id, delta }) => {
-  if (delta.x === undefined || delta.y === undefined) return
-  const prev = tx.get(id) || { position: { x: 0, y: 0 } }
-  const newPosition = {
-    x: prev.position.x + delta.x,
-    y: prev.position.y + delta.y,
-  }
-  const next = { ...prev, position: newPosition }
-  tx.set(id, next)
-  console.log('prev', prev, 'next', next)
-  console.log('moved piece:', id)
-}
-
-const placePiece = (tx, id) => {
-  // change prop
+const placePiece = (tx, { id }) => {
   const prevPiece = tx.get(id)
   const nextPiece = { ...prevPiece, placed: true }
   tx.set(id, nextPiece)
@@ -30,21 +33,31 @@ const placePiece = (tx, id) => {
   tx.set('placed', nextPlaced)
 }
 
-const restartPuzzle = tx => {
-  tx.set('free', [1, 2, 3, 4, 5, 6, 7, 8, 9])
-  tx.set('placed', [])
-
-  for (let i = 1; i <= 9; i++) {
-    tx.set(i, {
-      position: {
-        x: 0,
-        y: 0,
-        scaleX: 1,
-        scaleY: 1,
-      },
-      placed: false,
-    })
+const dragStart = (tx, { id }) => {
+  const prev = tx.get(id) || { position: { x: 0, y: 0 } }
+  const newDragSession = {
+    x: prev.position.x,
+    y: prev.position.y,
   }
+
+  const next = {
+    ...prev,
+    dragSessionStart: newDragSession,
+  }
+  tx.set(id, next)
 }
 
-export default { movePiece, placePiece, restartPuzzle }
+const dragMove = (tx, { id, delta }) => {
+  if (delta.x === undefined || delta.y === undefined) return
+  const prev = tx.get(id) || { position: { x: 0, y: 0 } }
+  const newPosition = {
+    x: prev.dragSessionStart.x + delta.x,
+    y: prev.dragSessionStart.y + delta.y,
+    scaleX: 1,
+    scaleY: 1,
+  }
+  const next = { ...prev, position: newPosition }
+  tx.set(id, next)
+}
+
+export default { restartPuzzle, placePiece, dragStart, dragMove }

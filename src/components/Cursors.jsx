@@ -32,7 +32,7 @@ const Cursors = ({ synco }) => {
               zIndex: 100,
             }}
           >
-            <Cursor fill={cursorColors[idx]} />
+            <Cursor fill={cursorColors[id % cursorColors.length]} id={id} />
           </div>
         )
       })}

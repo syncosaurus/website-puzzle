@@ -12,6 +12,10 @@ export function Piece({ id, children, styles, synco }) {
       scaleX: 1,
       scaleY: 1,
     },
+    dragSessionStart: {
+      x: 0,
+      y: 0,
+    },
     placed: false,
   })
 
