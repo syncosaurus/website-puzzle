@@ -20,12 +20,12 @@ const Cursors = ({ synco }) => {
   useUpdateMyPresence(synco)
 
   return (
-    <div className="absolute h-screen w-screen overflow-hidden">
+    <div className="absolute h-screen w-screen overflow-hidden pointer-events-none">
       {Object.entries(others).map(([id, { x, y }]) => {
         return (
           <div
             key={id}
-            className="cursorContainer"
+            className="cursorContainer pointer-events-none"
             style={{
               position: 'absolute',
               transform: `translate(${x}px, ${y}px)`,
