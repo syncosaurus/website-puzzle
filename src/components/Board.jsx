@@ -6,6 +6,7 @@ import RowGenerator from './RowGenerator'
 import { PieceTransparent } from './PieceTransparent'
 import { useSubscribe } from 'syncosaurus'
 import { getRandomInt } from '../utils/helpers'
+import ResetButton from './ResetButton'
 
 const getFree = tx => tx.get('free')
 const getPlaced = tx => tx.get('placed')
@@ -48,10 +49,14 @@ function Board({ height, width, synco }) {
     e.preventDefault()
     let randomPosArray = []
     for (let i = 1; i <= 9; i++) {
+      let xVal = getRandomInt(80)
+      if (Math.random() > 0.5) {
+        xVal += 320
+      }
       randomPosArray.push({
         id: i,
-        x: getRandomInt(500),
-        y: getRandomInt(200) + 100,
+        x: xVal,
+        y: getRandomInt(300),
       })
     }
     synco.mutate.restartPuzzle({ startPosArr: randomPosArray })
@@ -84,8 +89,8 @@ function Board({ height, width, synco }) {
               placedPieceIds={placedPieceIds}
               synco={synco}
             />
-            <div className="inline-block">
-              <button onClick={handleReset}>Reset Puzzle</button>
+            <div className="absolute translate-x-48 translate-y-[175px]">
+              <ResetButton onClick={handleReset} />
             </div>
           </div>
         </div>

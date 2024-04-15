@@ -17,7 +17,12 @@ const Cursor = ({ fill, id }) => {
           style={{ fill: fill || 'black' }}
         ></path>
       </svg>
-      <p>user {id}</p>
+      <div
+        style={{ backgroundColor: fill }}
+        className="text-center text-slate-900 text-s rounded-2xl translate-x-6 px-2 py-1 -translate-y-2 pointer-events-none"
+      >
+        user {id}
+      </div>
     </div>
   )
 }
