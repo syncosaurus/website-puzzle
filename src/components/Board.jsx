@@ -49,10 +49,14 @@ function Board({ height, width, synco }) {
     e.preventDefault()
     let randomPosArray = []
     for (let i = 1; i <= 9; i++) {
+      let xVal = getRandomInt(80)
+      if (Math.random() > 0.5) {
+        xVal += 320
+      }
       randomPosArray.push({
         id: i,
-        x: getRandomInt(400),
-        y: getRandomInt(200) + 100,
+        x: xVal,
+        y: getRandomInt(300),
       })
     }
     synco.mutate.restartPuzzle({ startPosArr: randomPosArray })
