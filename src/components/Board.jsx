@@ -6,6 +6,7 @@ import RowGenerator from './RowGenerator'
 import { PieceTransparent } from './PieceTransparent'
 import { useSubscribe } from 'syncosaurus'
 import { getRandomInt } from '../utils/helpers'
+import ResetButton from './ResetButton'
 
 const getFree = tx => tx.get('free')
 const getPlaced = tx => tx.get('placed')
@@ -84,8 +85,8 @@ function Board({ height, width, synco }) {
               placedPieceIds={placedPieceIds}
               synco={synco}
             />
-            <div className="inline-block">
-              <button onClick={handleReset}>Reset Puzzle</button>
+            <div className="absolute translate-x-48 translate-y-[175px]">
+              <ResetButton onClick={handleReset} />
             </div>
           </div>
         </div>
