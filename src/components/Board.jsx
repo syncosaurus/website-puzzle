@@ -50,7 +50,7 @@ function Board({ height, width, synco }) {
     for (let i = 1; i <= 9; i++) {
       randomPosArray.push({
         id: i,
-        x: getRandomInt(500),
+        x: getRandomInt(400),
         y: getRandomInt(200) + 100,
       })
     }
