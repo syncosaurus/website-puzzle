@@ -20,8 +20,8 @@ const Cursors = ({ synco }) => {
   useUpdateMyPresence(synco)
 
   return (
-    <>
-      {Object.entries(others).map(([id, { x, y }], idx) => {
+    <div className="absolute h-screen w-screen overflow-hidden">
+      {Object.entries(others).map(([id, { x, y }]) => {
         return (
           <div
             key={id}
@@ -36,7 +36,7 @@ const Cursors = ({ synco }) => {
           </div>
         )
       })}
-    </>
+    </div>
   )
 }
 
